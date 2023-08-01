@@ -17,16 +17,16 @@ const renderCounterHook = () => {
   });
 };
 
-describe("useCounter", () => {
-  test("should handle increment correctly", async () => {
+describe("useCounter hook", () => {
+  test("should handle incrementing value correctly", async () => {
     const { result } = renderCounterHook();
-    act(() => result.current.dispatch(result.current.actions.increment()));
+    act(() => result.current.incrementValue());
     await waitFor(() => expect(result.current.count).toBe(1));
   });
 
-  test("should handle decrement correctly", async () => {
+  test("should handle decrementing value correctly", async () => {
     const { result } = renderCounterHook();
-    act(() => result.current.dispatch(result.current.actions.decrement()));
+    act(() => result.current.decrementValue());
     await waitFor(() => expect(result.current.count).toBe(-1));
   });
 });

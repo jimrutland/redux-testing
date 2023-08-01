@@ -2,8 +2,13 @@ import styles from "./Counter.module.css";
 import { useCounter } from "./CounterHook";
 
 export function Counter() {
-  const { setIncrementAmount, incrementAmount, dispatch, actions, count } =
-    useCounter();
+  const {
+    setIncrementAmount,
+    incrementAmount,
+    decrementValue,
+    incrementValue,
+    count,
+  } = useCounter();
   const { decrement, increment } = actions;
 
   return (
@@ -12,7 +17,7 @@ export function Counter() {
         <button
           className={styles.button}
           aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
+          onClick={() => decrementValue()}
         >
           -
         </button>
@@ -20,7 +25,7 @@ export function Counter() {
         <button
           className={styles.button}
           aria-label="Increment value"
-          onClick={() => dispatch(increment())}
+          onClick={() => incrementValue()}
         >
           +
         </button>
