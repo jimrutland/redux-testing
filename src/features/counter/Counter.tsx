@@ -9,7 +9,6 @@ export function Counter() {
     incrementValue,
     count,
   } = useCounter();
-  const { decrement, increment } = actions;
 
   return (
     <div>
